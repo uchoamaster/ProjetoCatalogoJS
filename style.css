@@ -1,0 +1,262 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 15px 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.carrinho-icon {
+    position: relative;
+    cursor: pointer;
+}
+
+.carrinho-icon img {
+    width: 30px;
+    height: 30px;
+}
+
+#carrinho-quantidade {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 1px;
+    font-size: 0.8em;
+    min-width: 18px;
+    text-align: center;
+}
+
+.produtos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.produto {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.produto img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.produto h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.produto p {
+    margin-bottom: 10px;
+}
+
+.produto .preco {
+    font-weight: bold;
+    color: green;
+    margin-bottom: 10px;
+}
+
+.produto .comprar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.produto .comprar input[type="number"] {
+    width: 60px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.produto .comprar button {
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.produto .comprar button:hover {
+    background-color: #4cae4c;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow-x: hidden;
+    transition: 0.5s;
+    z-index: 1;
+}
+
+.modal.aberto {
+    display: block; /* Ou flex, grid, dependendo do seu layout */
+    width: 400px; /* Garanta que a largura esteja definida */
+}
+.modal-conteudo {
+    position: relative;
+    background-color: #fefefe;
+    height: 100%;
+    padding: 20px;
+    border-left: 1px solid #888;
+    overflow-y: auto;
+}
+
+.fechar-modal {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.fechar-modal:hover,
+.fechar-modal:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#lista-carrinho {
+    list-style: none;
+    padding: 0;
+}
+
+#lista-carrinho li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+#lista-carrinho li:last-child {
+    border-bottom: none;
+}
+
+.item-carrinho-info {
+    flex-grow: 1;
+}
+
+.item-carrinho-info span {
+    display: block;
+}
+
+.item-carrinho-quantidade {
+    margin-left: 10px;
+}
+
+.total {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.finalizar-compra {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.finalizar-compra:hover {
+    background-color: #0056b3;
+}
+
+
+#lista-carrinho li button.remover-item {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
+}
+
+#lista-carrinho li button.remover-item:hover {
+    background-color: #c82333;
+}
+
+#tabela-carrinho {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+#tabela-carrinho th,
+#tabela-carrinho td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#tabela-carrinho th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+#tabela-carrinho tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#tabela-carrinho tfoot td {
+    font-weight: bold;
+}
+
+#tabela-carrinho button.remover-item {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+
+#tabela-carrinho button.remover-item:hover {
+    background-color: #c82333;
+}

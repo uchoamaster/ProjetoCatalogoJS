@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Produtos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Nosso Catálogo</h1>
+            <div class="carrinho-icon">
+                <img src="carrinho.png" alt="Carrinho de Compras">
+                <span id="carrinho-quantidade">0</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container produtos-grid">
+        </main>
+
+    <div id="modal-carrinho" class="modal">
+        <div class="modal-conteudo">
+            <span class="fechar-modal">&times;</span>
+            <h2>Seu Carrinho</h2>
+            <table id="tabela-carrinho">
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Qtd</th>
+                        <th>Preço Unit.</th>
+                        <th>Total</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="corpo-tabela-carrinho">
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3" style="text-align: right;"><strong>Total:</strong></td>
+                        <td colspan="2"><strong>R$ <span id="valor-total">0.00</span></strong></td>
+                    </tr>
+                </tfoot>
+            </table>
+            <button class="finalizar-compra">Finalizar Compra</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
